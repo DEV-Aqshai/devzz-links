@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B0B0F">
+<title>devzz — tap to play</title>
+<style>
+  :root{--bg:#0B0B0F;--card:#16161D;--line:#26262F;--txt:#F2F2F5;--dim:#9A9AA8;--acc:#C2185B;--sp:#1DB954;--am:#FA2D48;--yt:#FF0033}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+        padding:calc(14px + env(safe-area-inset-top)) 12px calc(20px + env(safe-area-inset-bottom));}
+  header{margin:0 auto 14px;max-width:720px}
+  h1{font-size:clamp(22px,6.5vw,30px);margin:0 0 4px;letter-spacing:-.4px}
+  h1 span{color:var(--acc)}
+  .sub{color:var(--dim);font-size:13.5px;margin:0 0 12px}
+  input{width:100%;padding:14px 16px;font-size:16px;border-radius:14px;border:1px solid var(--line);
+         background:var(--card);color:var(--txt);outline:none}
+  input:focus{border-color:var(--acc)}
+  ul{list-style:none;margin:14px auto 0;padding:0;max-width:720px}
+  .row{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);
+        border-radius:14px;padding:11px 12px;margin-bottom:8px}
+  .n{color:var(--dim);font-size:11.5px;font-variant-numeric:tabular-nums;min-width:26px}
+  .meta{flex:1;min-width:0}
+  .t{font-size:14.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .a{color:var(--dim);font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .dot{margin:0 5px}
+  .dur{color:var(--dim);font-size:11.5px;font-variant-numeric:tabular-nums}
+  .links{display:flex;gap:6px}
+  .links a{font-size:11px;text-decoration:none;padding:7px 9px;border-radius:9px;color:#fff;font-weight:600}
+  .sp{background:var(--sp)} .am{background:var(--am)} .yt{background:var(--yt)}
+  footer{max-width:720px;margin:18px auto 0;color:var(--dim);font-size:11.5px;line-height:1.6;text-align:center}
+  @media (max-width:430px){
+    .links{flex-direction:column}
+    .row{align-items:flex-start}
+  }
+</style></head>
+<body>
+<header>
+  <h1>dev<span>zz</span></h1>
+  <p class="sub">122 tracks · 6h 37m · tap a track to open it in your app</p>
+  <input id="q" placeholder="Filter by song or artist..." autocomplete="off" autocapitalize="none">
+</header>
+<ul id="list">
+<li class="row" data-s="mood (lofi (sped up)) yagih mael">
+  <div class="n">001</div>
+  <div class="meta"><div class="t">Mood (Lofi (Sped Up))</div><div class="a">Yagih Mael<span class="dot">·</span>Mood - Lofi (Sped Up)</div></div>
+  <div class="dur">2:28</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Mood%20%28Lofi%20%28Sped%20Up%29%29%20Yagih%20Mael" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Mood%20%28Lofi%20%28Sped%20Up%29%29%20Yagih%20Mael" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Mood%20%28Lofi%20%28Sped%20Up%29%29%20Yagih%20Mael" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="i like me better lauv">
+  <div class="n">002</div>
+  <div class="meta"><div class="t">I Like Me Better</div><div class="a">Lauv<span class="dot">·</span>I Like Me Better</div></div>
+  <div class="dur">3:18</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/I%20Like%20Me%20Better%20Lauv" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=I%20Like%20Me%20Better%20Lauv" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=I%20Like%20Me%20Better%20Lauv" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="we don&#x27;t talk anymore (feat. selena gomez) charlie puth">
+  <div class="n">003</div>
+  <div class="meta"><div class="t">We Don&#x27;t Talk Anymore (feat. Selena Gomez)</div><div class="a">Charlie Puth<span class="dot">·</span>Nine Track Mind</div></div>
+  <div class="dur">3:38</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/We%20Don%27t%20Talk%20Anymore%20%28feat.%20Selena%20Gomez%29%20Charlie%20Puth" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=We%20Don%27t%20Talk%20Anymore%20%28feat.%20Selena%20Gomez%29%20Charlie%20Puth" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=We%20Don%27t%20Talk%20Anymore%20%28feat.%20Selena%20Gomez%29%20Charlie%20Puth" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="carry you home alex warren">
+  <div class="n">004</div>
+  <div class="meta"><div class="t">Carry You Home</div><div class="a">Alex Warren<span class="dot">·</span>You&#x27;ll Be Alright, Kid (Chapter 1)</div></div>
+  <div class="dur">2:47</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Carry%20You%20Home%20Alex%20Warren" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Carry%20You%20Home%20Alex%20Warren" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Carry%20You%20Home%20Alex%20Warren" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="beautiful things benson boone">
+  <div class="n">005</div>
+  <div class="meta"><div class="t">Beautiful Things</div><div class="a">Benson Boone<span class="dot">·</span>Fireworks &amp; Rollerblades</div></div>
+  <div class="dur">3:01</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Beautiful%20Things%20Benson%20Boone" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Beautiful%20Things%20Benson%20Boone" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Beautiful%20Things%20Benson%20Boone" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="attention charlie puth">
+  <div class="n">006</div>
+  <div class="meta"><div class="t">Attention</div><div class="a">Charlie Puth<span class="dot">·</span>Attention</div></div>
+  <div class="dur">3:32</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Attention%20Charlie%20Puth" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Attention%20Charlie%20Puth" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Attention%20Charlie%20Puth" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="someone you loved lewis capaldi">
+  <div class="n">007</div>
+  <div class="meta"><div class="t">Someone You Loved</div><div class="a">Lewis Capaldi<span class="dot">·</span>Divinely Uninspired To A Hellish Extent</div></div>
+  <div class="dur">3:03</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Someone%20You%20Loved%20Lewis%20Capaldi" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Someone%20You%20Loved%20Lewis%20Capaldi" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Someone%20You%20Loved%20Lewis%20Capaldi" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="die with a smile lady gaga &amp; bruno mars">
+  <div class="n">008</div>
+  <div class="meta"><div class="t">Die With A Smile</div><div class="a">Lady Gaga &amp; Bruno Mars<span class="dot">·</span>MAYHEM</div></div>
+  <div class="dur">4:12</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Die%20With%20A%20Smile%20Lady%20Gaga%20%26%20Bruno%20Mars" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Die%20With%20A%20Smile%20Lady%20Gaga%20%26%20Bruno%20Mars" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Die%20With%20A%20Smile%20Lady%20Gaga%20%26%20Bruno%20Mars" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="self aware temper city">
+  <div class="n">009</div>
+  <div class="meta"><div class="t">Self Aware</div><div class="a">Temper City<span class="dot">·</span>Self Aware</div></div>
+  <div class="dur">3:01</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Self%20Aware%20Temper%20City" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Self%20Aware%20Temper%20City" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Self%20Aware%20Temper%20City" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="treat you better shawn mendes">
+  <div class="n">010</div>
+  <div class="meta"><div class="t">Treat You Better</div><div class="a">Shawn Mendes<span class="dot">·</span>Illuminate (Deluxe)</div></div>
+  <div class="dur">3:08</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Treat%20You%20Better%20Shawn%20Mendes" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Treat%20You%20Better%20Shawn%20Mendes" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Treat%20You%20Better%20Shawn%20Mendes" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="nobody (from kaiju no. 8) onerepublic">
+  <div class="n">011</div>
+  <div class="meta"><div class="t">Nobody (from Kaiju No. 8)</div><div class="a">OneRepublic<span class="dot">·</span>Artificial Paradise (Deluxe)</div></div>
+  <div class="dur">2:34</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Nobody%20%28from%20Kaiju%20No.%208%29%20OneRepublic" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Nobody%20%28from%20Kaiju%20No.%208%29%20OneRepublic" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Nobody%20%28from%20Kaiju%20No.%208%29%20OneRepublic" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="if i die tomorrow chloe adams">
+  <div class="n">012</div>
+  <div class="meta"><div class="t">If I Die Tomorrow</div><div class="a">Chloe Adams<span class="dot">·</span>If I Die Tomorrow</div></div>
+  <div class="dur">2:59</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/If%20I%20Die%20Tomorrow%20Chloe%20Adams" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=If%20I%20Die%20Tomorrow%20Chloe%20Adams" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=If%20I%20Die%20Tomorrow%20Chloe%20Adams" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="happy face jagwar twin">
+  <div class="n">013</div>
+  <div class="meta"><div class="t">Happy Face</div><div class="a">Jagwar Twin<span class="dot">·</span>Happy Face</div></div>
+  <div class="dur">2:50</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Happy%20Face%20Jagwar%20Twin" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Happy%20Face%20Jagwar%20Twin" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Happy%20Face%20Jagwar%20Twin" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="die for you the weeknd">
+  <div class="n">014</div>
+  <div class="meta"><div class="t">Die For You</div><div class="a">The Weeknd<span class="dot">·</span>Starboy</div></div>
+  <div class="dur">4:21</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Die%20For%20You%20The%20Weeknd" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Die%20For%20You%20The%20Weeknd" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Die%20For%20You%20The%20Weeknd" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="i wanna be yours arctic monkeys">
+  <div class="n">015</div>
+  <div class="meta"><div class="t">I Wanna Be Yours</div><div class="a">Arctic Monkeys<span class="dot">·</span>AM</div></div>
+  <div class="dur">3:04</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/I%20Wanna%20Be%20Yours%20Arctic%20Monkeys" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=I%20Wanna%20Be%20Yours%20Arctic%20Monkeys" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=I%20Wanna%20Be%20Yours%20Arctic%20Monkeys" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="this is what heartbreak feels like jvke">
+  <div class="n">016</div>
+  <div class="meta"><div class="t">this is what heartbreak feels like</div><div class="a">JVKE<span class="dot">·</span>this is what ____ feels like (Vol. 1-4)</div></div>
+  <div class="dur">2:38</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/this%20is%20what%20heartbreak%20feels%20like%20JVKE" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=this%20is%20what%20heartbreak%20feels%20like%20JVKE" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=this%20is%20what%20heartbreak%20feels%20like%20JVKE" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="her jvke">
+  <div class="n">017</div>
+  <div class="meta"><div class="t">her</div><div class="a">JVKE<span class="dot">·</span>her</div></div>
+  <div class="dur">2:52</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/her%20JVKE" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=her%20JVKE" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=her%20JVKE" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="dancin (krono remix) (feat. luvli) aaron smith &amp; krono">
+  <div class="n">018</div>
+  <div class="meta"><div class="t">Dancin (Krono Remix) (feat. Luvli)</div><div class="a">Aaron Smith &amp; Krono<span class="dot">·</span>Dancin (Krono Remix)</div></div>
+  <div class="dur">3:19</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Dancin%20%28Krono%20Remix%29%20%28feat.%20Luvli%29%20Aaron%20Smith%20%26%20Krono" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Dancin%20%28Krono%20Remix%29%20%28feat.%20Luvli%29%20Aaron%20Smith%20%26%20Krono" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Dancin%20%28Krono%20Remix%29%20%28feat.%20Luvli%29%20Aaron%20Smith%20%26%20Krono" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="sad! xxxtentacion">
+  <div class="n">019</div>
+  <div class="meta"><div class="t">SAD!</div><div class="a">XXXTENTACION<span class="dot">·</span>? (Deluxe)</div></div>
+  <div class="dur">2:47</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/SAD%21%20XXXTENTACION" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=SAD%21%20XXXTENTACION" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=SAD%21%20XXXTENTACION" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="summertime sadness lana del rey">
+  <div class="n">020</div>
+  <div class="meta"><div class="t">Summertime Sadness</div><div class="a">Lana Del Rey<span class="dot">·</span>Born To Die - The Paradise Edition (Special Version)</div></div>
+  <div class="dur">4:25</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Summertime%20Sadness%20Lana%20Del%20Rey" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Summertime%20Sadness%20Lana%20Del%20Rey" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Summertime%20Sadness%20Lana%20Del%20Rey" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="sunflower (remix) post malone &amp; swae lee &amp; nicky jam &amp; prince royce">
+  <div class="n">021</div>
+  <div class="meta"><div class="t">Sunflower (Remix)</div><div class="a">Post Malone &amp; Swae Lee &amp; Nicky Jam &amp; Prince Royce<span class="dot">·</span>Spider-Man: Into the Spider-Verse (Deluxe Edition)</div></div>
+  <div class="dur">3:30</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Sunflower%20%28Remix%29%20Post%20Malone%20%26%20Swae%20Lee%20%26%20Nicky%20Jam%20%26%20Prince%20Royce" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Sunflower%20%28Remix%29%20Post%20Malone%20%26%20Swae%20Lee%20%26%20Nicky%20Jam%20%26%20Prince%20Royce" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Sunflower%20%28Remix%29%20Post%20Malone%20%26%20Swae%20Lee%20%26%20Nicky%20Jam%20%26%20Prince%20Royce" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="confess your love (feat. ola.wav) jiandro">
+  <div class="n">022</div>
+  <div class="meta"><div class="t">Confess Your Love (feat. ola.wav)</div><div class="a">Jiandro<span class="dot">·</span></div></div>
+  <div class="dur">2:12</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Confess%20Your%20Love%20%28feat.%20ola.wav%29%20Jiandro" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Confess%20Your%20Love%20%28feat.%20ola.wav%29%20Jiandro" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Confess%20Your%20Love%20%28feat.%20ola.wav%29%20Jiandro" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="runaway aurora">
+  <div class="n">023</div>
+  <div class="meta"><div class="t">Runaway</div><div class="a">AURORA<span class="dot">·</span>Running With The Wolves (EP)</div></div>
+  <div class="dur">4:12</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Runaway%20AURORA" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Runaway%20AURORA" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Runaway%20AURORA" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="eternity alex warren">
+  <div class="n">024</div>
+  <div class="meta"><div class="t">Eternity</div><div class="a">Alex Warren<span class="dot">·</span>You&#x27;ll Be Alright, Kid</div></div>
+  <div class="dur">3:10</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Eternity%20Alex%20Warren" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Eternity%20Alex%20Warren" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Eternity%20Alex%20Warren" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="world&#x27;s smallest violin ajr">
+  <div class="n">025</div>
+  <div class="meta"><div class="t">World&#x27;s Smallest Violin</div><div class="a">AJR<span class="dot">·</span>OK ORCHESTRA</div></div>
+  <div class="dur">3:01</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/World%27s%20Smallest%20Violin%20AJR" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=World%27s%20Smallest%20Violin%20AJR" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=World%27s%20Smallest%20Violin%20AJR" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="starboy (feat. daft punk) the weeknd">
+  <div class="n">026</div>
+  <div class="meta"><div class="t">Starboy (feat. Daft Punk)</div><div class="a">The Weeknd<span class="dot">·</span>Starboy</div></div>
+  <div class="dur">3:51</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Starboy%20%28feat.%20Daft%20Punk%29%20The%20Weeknd" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Starboy%20%28feat.%20Daft%20Punk%29%20The%20Weeknd" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Starboy%20%28feat.%20Daft%20Punk%29%20The%20Weeknd" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="a fool for you shau evans">
+  <div class="n">027</div>
+  <div class="meta"><div class="t">A Fool for You</div><div class="a">Shau Evans<span class="dot">·</span>A Fool for You</div></div>
+  <div class="dur">3:43</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/A%20Fool%20for%20You%20Shau%20Evans" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=A%20Fool%20for%20You%20Shau%20Evans" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=A%20Fool%20for%20You%20Shau%20Evans" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="rude magic!">
+  <div class="n">028</div>
+  <div class="meta"><div class="t">Rude</div><div class="a">MAGIC!<span class="dot">·</span>Don&#x27;t Kill the Magic</div></div>
+  <div class="dur">3:45</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Rude%20MAGIC%21" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Rude%20MAGIC%21" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Rude%20MAGIC%21" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="story of a warrior john michael howell">
+  <div class="n">029</div>
+  <div class="meta"><div class="t">Story of a Warrior</div><div class="a">John Michael Howell<span class="dot">·</span>Story of a Warrior</div></div>
+  <div class="dur">2:10</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Story%20of%20a%20Warrior%20John%20Michael%20Howell" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Story%20of%20a%20Warrior%20John%20Michael%20Howell" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Story%20of%20a%20Warrior%20John%20Michael%20Howell" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="mercy (acoustic) shawn mendes">
+  <div class="n">030</div>
+  <div class="meta"><div class="t">Mercy (Acoustic)</div><div class="a">Shawn Mendes<span class="dot">·</span>Illuminate (Deluxe)</div></div>
+  <div class="dur">3:40</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Mercy%20%28Acoustic%29%20Shawn%20Mendes" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Mercy%20%28Acoustic%29%20Shawn%20Mendes" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Mercy%20%28Acoustic%29%20Shawn%20Mendes" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="leave me in the dark alexander stewart">
+  <div class="n">031</div>
+  <div class="meta"><div class="t">leave me in the dark</div><div class="a">Alexander Stewart<span class="dot">·</span>leave me in the dark</div></div>
+  <div class="dur">2:30</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/leave%20me%20in%20the%20dark%20Alexander%20Stewart" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=leave%20me%20in%20the%20dark%20Alexander%20Stewart" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=leave%20me%20in%20the%20dark%20Alexander%20Stewart" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="sailor song gigi perez">
+  <div class="n">032</div>
+  <div class="meta"><div class="t">Sailor Song</div><div class="a">Gigi Perez<span class="dot">·</span>At The Beach, In Every Life</div></div>
+  <div class="dur">3:32</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Sailor%20Song%20Gigi%20Perez" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Sailor%20Song%20Gigi%20Perez" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Sailor%20Song%20Gigi%20Perez" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="save your tears the weeknd">
+  <div class="n">033</div>
+  <div class="meta"><div class="t">Save Your Tears</div><div class="a">The Weeknd<span class="dot">·</span>After Hours</div></div>
+  <div class="dur">3:36</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Save%20Your%20Tears%20The%20Weeknd" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Save%20Your%20Tears%20The%20Weeknd" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Save%20Your%20Tears%20The%20Weeknd" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="moonlight xxxtentacion">
+  <div class="n">034</div>
+  <div class="meta"><div class="t">Moonlight</div><div class="a">XXXTENTACION<span class="dot">·</span>?</div></div>
+  <div class="dur">2:16</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Moonlight%20XXXTENTACION" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Moonlight%20XXXTENTACION" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Moonlight%20XXXTENTACION" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="numb little bug em beihold">
+  <div class="n">035</div>
+  <div class="meta"><div class="t">Numb Little Bug</div><div class="a">Em Beihold<span class="dot">·</span>Numb Little Bug</div></div>
+  <div class="dur">2:50</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Numb%20Little%20Bug%20Em%20Beihold" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Numb%20Little%20Bug%20Em%20Beihold" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Numb%20Little%20Bug%20Em%20Beihold" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="babydoll dominic fike">
+  <div class="n">036</div>
+  <div class="meta"><div class="t">Babydoll</div><div class="a">Dominic Fike<span class="dot">·</span>Don&#x27;t Forget About Me, Demos</div></div>
+  <div class="dur">1:38</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Babydoll%20Dominic%20Fike" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Babydoll%20Dominic%20Fike" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Babydoll%20Dominic%20Fike" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="i ain&#x27;t worried onerepublic">
+  <div class="n">037</div>
+  <div class="meta"><div class="t">I Ain&#x27;t Worried</div><div class="a">OneRepublic<span class="dot">·</span>Artificial Paradise (Deluxe)</div></div>
+  <div class="dur">2:29</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/I%20Ain%27t%20Worried%20OneRepublic" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=I%20Ain%27t%20Worried%20OneRepublic" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=I%20Ain%27t%20Worried%20OneRepublic" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="golden hour jvke">
+  <div class="n">038</div>
+  <div class="meta"><div class="t">golden hour</div><div class="a">JVKE<span class="dot">·</span>this is what ____ feels like (Vol. 1-4)</div></div>
+  <div class="dur">3:30</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/golden%20hour%20JVKE" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=golden%20hour%20JVKE" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=golden%20hour%20JVKE" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="see you again (feat. charlie puth) wiz khalifa">
+  <div class="n">039</div>
+  <div class="meta"><div class="t">See You Again (feat. Charlie Puth)</div><div class="a">Wiz Khalifa<span class="dot">·</span>Nine Track Mind</div></div>
+  <div class="dur">3:50</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/See%20You%20Again%20%28feat.%20Charlie%20Puth%29%20Wiz%20Khalifa" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=See%20You%20Again%20%28feat.%20Charlie%20Puth%29%20Wiz%20Khalifa" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=See%20You%20Again%20%28feat.%20Charlie%20Puth%29%20Wiz%20Khalifa" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="snap rosa linn">
+  <div class="n">040</div>
+  <div class="meta"><div class="t">SNAP</div><div class="a">Rosa Linn<span class="dot">·</span>SNAP</div></div>
+  <div class="dur">3:00</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/SNAP%20Rosa%20Linn" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=SNAP%20Rosa%20Linn" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=SNAP%20Rosa%20Linn" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="too sweet hozier">
+  <div class="n">041</div>
+  <div class="meta"><div class="t">Too Sweet</div><div class="a">Hozier<span class="dot">·</span>Unreal Unearth: Unheard</div></div>
+  <div class="dur">4:12</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Too%20Sweet%20Hozier" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Too%20Sweet%20Hozier" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Too%20Sweet%20Hozier" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="this is what sadness feels like jvke">
+  <div class="n">042</div>
+  <div class="meta"><div class="t">this is what sadness feels like</div><div class="a">JVKE<span class="dot">·</span>this is what ____ feels like (Vol. 1-4)</div></div>
+  <div class="dur">3:12</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/this%20is%20what%20sadness%20feels%20like%20JVKE" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=this%20is%20what%20sadness%20feels%20like%20JVKE" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=this%20is%20what%20sadness%20feels%20like%20JVKE" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="missing piece john michael howell">
+  <div class="n">043</div>
+  <div class="meta"><div class="t">Missing Piece</div><div class="a">John Michael Howell<span class="dot">·</span>Missing Piece</div></div>
+  <div class="dur">2:11</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Missing%20Piece%20John%20Michael%20Howell" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Missing%20Piece%20John%20Michael%20Howell" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Missing%20Piece%20John%20Michael%20Howell" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="here with me d4vd">
+  <div class="n">044</div>
+  <div class="meta"><div class="t">Here With Me</div><div class="a">d4vd<span class="dot">·</span>Anti Love Songs</div></div>
+  <div class="dur">4:03</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Here%20With%20Me%20d4vd" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Here%20With%20Me%20d4vd" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Here%20With%20Me%20d4vd" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="this is what falling in love feels like jvke">
+  <div class="n">045</div>
+  <div class="meta"><div class="t">this is what falling in love feels like</div><div class="a">JVKE<span class="dot">·</span>this is what ____ feels like (Vol. 1-4)</div></div>
+  <div class="dur">2:01</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/this%20is%20what%20falling%20in%20love%20feels%20like%20JVKE" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=this%20is%20what%20falling%20in%20love%20feels%20like%20JVKE" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=this%20is%20what%20falling%20in%20love%20feels%20like%20JVKE" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="death bed (coffee for your head) powfu &amp; beabadoobee">
+  <div class="n">046</div>
+  <div class="meta"><div class="t">death bed (coffee for your head)</div><div class="a">Powfu &amp; beabadoobee<span class="dot">·</span>poems of the past</div></div>
+  <div class="dur">2:54</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/death%20bed%20%28coffee%20for%20your%20head%29%20Powfu%20%26%20beabadoobee" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=death%20bed%20%28coffee%20for%20your%20head%29%20Powfu%20%26%20beabadoobee" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=death%20bed%20%28coffee%20for%20your%20head%29%20Powfu%20%26%20beabadoobee" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="sunroof nicky youre &amp; hey daisy">
+  <div class="n">047</div>
+  <div class="meta"><div class="t">Sunroof</div><div class="a">Nicky Youre &amp; hey daisy<span class="dot">·</span>Sunroof</div></div>
+  <div class="dur">2:44</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Sunroof%20Nicky%20Youre%20%26%20hey%20daisy" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Sunroof%20Nicky%20Youre%20%26%20hey%20daisy" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Sunroof%20Nicky%20Youre%20%26%20hey%20daisy" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="sweater weather the neighbourhood">
+  <div class="n">048</div>
+  <div class="meta"><div class="t">Sweater Weather</div><div class="a">The Neighbourhood<span class="dot">·</span>I Love You.</div></div>
+  <div class="dur">4:01</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Sweater%20Weather%20The%20Neighbourhood" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Sweater%20Weather%20The%20Neighbourhood" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Sweater%20Weather%20The%20Neighbourhood" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="blue yung kai">
+  <div class="n">049</div>
+  <div class="meta"><div class="t">blue</div><div class="a">yung kai<span class="dot">·</span>blue</div></div>
+  <div class="dur">3:35</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/blue%20yung%20kai" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=blue%20yung%20kai" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=blue%20yung%20kai" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="eternity (preview) alex warren">
+  <div class="n">050</div>
+  <div class="meta"><div class="t">Eternity (Preview)</div><div class="a">Alex Warren<span class="dot">·</span>Eternity</div></div>
+  <div class="dur">0:35</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Eternity%20%28Preview%29%20Alex%20Warren" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Eternity%20%28Preview%29%20Alex%20Warren" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Eternity%20%28Preview%29%20Alex%20Warren" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="abcdefu gayle">
+  <div class="n">051</div>
+  <div class="meta"><div class="t">abcdefu</div><div class="a">GAYLE<span class="dot">·</span>abcdefu</div></div>
+  <div class="dur">2:49</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/abcdefu%20GAYLE" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=abcdefu%20GAYLE" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=abcdefu%20GAYLE" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="lonely akon">
+  <div class="n">052</div>
+  <div class="meta"><div class="t">Lonely</div><div class="a">Akon<span class="dot">·</span>Trouble</div></div>
+  <div class="dur">3:56</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Lonely%20Akon" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Lonely%20Akon" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Lonely%20Akon" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="505 arctic monkeys">
+  <div class="n">053</div>
+  <div class="meta"><div class="t">505</div><div class="a">Arctic Monkeys<span class="dot">·</span>Favourite Worst Nightmare</div></div>
+  <div class="dur">4:14</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/505%20Arctic%20Monkeys" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=505%20Arctic%20Monkeys" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=505%20Arctic%20Monkeys" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="until i found you stephen sanchez">
+  <div class="n">054</div>
+  <div class="meta"><div class="t">Until I Found You</div><div class="a">Stephen Sanchez<span class="dot">·</span>Easy On My Eyes</div></div>
+  <div class="dur">2:57</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Until%20I%20Found%20You%20Stephen%20Sanchez" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Until%20I%20Found%20You%20Stephen%20Sanchez" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Until%20I%20Found%20You%20Stephen%20Sanchez" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="animals maroon 5">
+  <div class="n">055</div>
+  <div class="meta"><div class="t">Animals</div><div class="a">Maroon 5<span class="dot">·</span>V (Asia Tour Edition)</div></div>
+  <div class="dur">3:52</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Animals%20Maroon%205" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Animals%20Maroon%205" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Animals%20Maroon%205" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="friends marshmello &amp; anne-marie">
+  <div class="n">056</div>
+  <div class="meta"><div class="t">FRIENDS</div><div class="a">Marshmello &amp; Anne-Marie<span class="dot">·</span>FRIENDS</div></div>
+  <div class="dur">3:22</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/FRIENDS%20Marshmello%20%26%20Anne-Marie" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=FRIENDS%20Marshmello%20%26%20Anne-Marie" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=FRIENDS%20Marshmello%20%26%20Anne-Marie" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="light switch charlie puth">
+  <div class="n">057</div>
+  <div class="meta"><div class="t">Light Switch</div><div class="a">Charlie Puth<span class="dot">·</span>Light Switch</div></div>
+  <div class="dur">3:06</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Light%20Switch%20Charlie%20Puth" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Light%20Switch%20Charlie%20Puth" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Light%20Switch%20Charlie%20Puth" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="hall of fame the script">
+  <div class="n">058</div>
+  <div class="meta"><div class="t">Hall of Fame</div><div class="a">The Script<span class="dot">·</span>#3 Deluxe Version</div></div>
+  <div class="dur">3:22</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Hall%20of%20Fame%20The%20Script" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Hall%20of%20Fame%20The%20Script" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Hall%20of%20Fame%20The%20Script" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="school crush nafeesisboujee">
+  <div class="n">059</div>
+  <div class="meta"><div class="t">school crush</div><div class="a">Nafeesisboujee<span class="dot">·</span>school crush</div></div>
+  <div class="dur">2:13</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/school%20crush%20Nafeesisboujee" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=school%20crush%20Nafeesisboujee" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=school%20crush%20Nafeesisboujee" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="tokyo drift (fast &amp; furious) teriyaki boyz">
+  <div class="n">060</div>
+  <div class="meta"><div class="t">Tokyo Drift (Fast &amp; Furious)</div><div class="a">Teriyaki Boyz<span class="dot">·</span>The Fast And The Furious: Tokyo Drift (Soundtrack)</div></div>
+  <div class="dur">4:16</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Tokyo%20Drift%20%28Fast%20%26%20Furious%29%20Teriyaki%20Boyz" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Tokyo%20Drift%20%28Fast%20%26%20Furious%29%20Teriyaki%20Boyz" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Tokyo%20Drift%20%28Fast%20%26%20Furious%29%20Teriyaki%20Boyz" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="10,000 foes john michael howell">
+  <div class="n">061</div>
+  <div class="meta"><div class="t">10,000 Foes</div><div class="a">John Michael Howell<span class="dot">·</span>10,000 Foes</div></div>
+  <div class="dur">2:31</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/10%2C000%20Foes%20John%20Michael%20Howell" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=10%2C000%20Foes%20John%20Michael%20Howell" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=10%2C000%20Foes%20John%20Michael%20Howell" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="way up jaden">
+  <div class="n">062</div>
+  <div class="meta"><div class="t">Way Up</div><div class="a">Jaden<span class="dot">·</span>Spider-Man: Into the Spider-Verse (Soundtrack)</div></div>
+  <div class="dur">2:34</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Way%20Up%20Jaden" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Way%20Up%20Jaden" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Way%20Up%20Jaden" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="what&#x27;s up danger blackway &amp; black caviar">
+  <div class="n">063</div>
+  <div class="meta"><div class="t">What&#x27;s Up Danger</div><div class="a">Blackway &amp; Black Caviar<span class="dot">·</span>Spider-Man: Into the Spider-Verse (Soundtrack)</div></div>
+  <div class="dur">3:43</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/What%27s%20Up%20Danger%20Blackway%20%26%20Black%20Caviar" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=What%27s%20Up%20Danger%20Blackway%20%26%20Black%20Caviar" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=What%27s%20Up%20Danger%20Blackway%20%26%20Black%20Caviar" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="one last time ariana grande">
+  <div class="n">064</div>
+  <div class="meta"><div class="t">One Last Time</div><div class="a">Ariana Grande<span class="dot">·</span>My Everything (Deluxe)</div></div>
+  <div class="dur">3:18</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/One%20Last%20Time%20Ariana%20Grande" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=One%20Last%20Time%20Ariana%20Grande" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=One%20Last%20Time%20Ariana%20Grande" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="one more night maroon 5">
+  <div class="n">065</div>
+  <div class="meta"><div class="t">One More Night</div><div class="a">Maroon 5<span class="dot">·</span>Overexposed</div></div>
+  <div class="dur">3:40</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/One%20More%20Night%20Maroon%205" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=One%20More%20Night%20Maroon%205" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=One%20More%20Night%20Maroon%205" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="there&#x27;s nothing holdin&#x27; me back shawn mendes">
+  <div class="n">066</div>
+  <div class="meta"><div class="t">There&#x27;s Nothing Holdin&#x27; Me Back</div><div class="a">Shawn Mendes<span class="dot">·</span>Illuminate (Deluxe)</div></div>
+  <div class="dur">3:20</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/There%27s%20Nothing%20Holdin%27%20Me%20Back%20Shawn%20Mendes" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=There%27s%20Nothing%20Holdin%27%20Me%20Back%20Shawn%20Mendes" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=There%27s%20Nothing%20Holdin%27%20Me%20Back%20Shawn%20Mendes" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="about you the 1975">
+  <div class="n">067</div>
+  <div class="meta"><div class="t">About You</div><div class="a">The 1975<span class="dot">·</span>Being Funny In A Foreign Language</div></div>
+  <div class="dur">5:27</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/About%20You%20The%201975" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=About%20You%20The%201975" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=About%20You%20The%201975" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="blinding lights the weeknd">
+  <div class="n">068</div>
+  <div class="meta"><div class="t">Blinding Lights</div><div class="a">The Weeknd<span class="dot">·</span>Blinding Lights</div></div>
+  <div class="dur">3:22</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Blinding%20Lights%20The%20Weeknd" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Blinding%20Lights%20The%20Weeknd" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Blinding%20Lights%20The%20Weeknd" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="counting stars onerepublic">
+  <div class="n">069</div>
+  <div class="meta"><div class="t">Counting Stars</div><div class="a">OneRepublic<span class="dot">·</span>Native</div></div>
+  <div class="dur">4:18</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Counting%20Stars%20OneRepublic" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Counting%20Stars%20OneRepublic" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Counting%20Stars%20OneRepublic" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="levitating (feat. dababy) dua lipa">
+  <div class="n">070</div>
+  <div class="meta"><div class="t">Levitating (feat. DaBaby)</div><div class="a">Dua Lipa<span class="dot">·</span>Levitating</div></div>
+  <div class="dur">3:24</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Levitating%20%28feat.%20DaBaby%29%20Dua%20Lipa" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Levitating%20%28feat.%20DaBaby%29%20Dua%20Lipa" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Levitating%20%28feat.%20DaBaby%29%20Dua%20Lipa" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="drivers license olivia rodrigo">
+  <div class="n">071</div>
+  <div class="meta"><div class="t">drivers license</div><div class="a">Olivia Rodrigo<span class="dot">·</span>SOUR</div></div>
+  <div class="dur">4:03</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/drivers%20license%20Olivia%20Rodrigo" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=drivers%20license%20Olivia%20Rodrigo" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=drivers%20license%20Olivia%20Rodrigo" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="&#x27;cause you have to lany">
+  <div class="n">072</div>
+  <div class="meta"><div class="t">&#x27;Cause You Have To</div><div class="a">LANY<span class="dot">·</span>a beautiful blur</div></div>
+  <div class="dur">4:11</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/%27Cause%20You%20Have%20To%20LANY" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=%27Cause%20You%20Have%20To%20LANY" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=%27Cause%20You%20Have%20To%20LANY" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="hope xxxtentacion">
+  <div class="n">073</div>
+  <div class="meta"><div class="t">Hope</div><div class="a">XXXTENTACION<span class="dot">·</span>?</div></div>
+  <div class="dur">1:51</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Hope%20XXXTENTACION" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Hope%20XXXTENTACION" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Hope%20XXXTENTACION" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="good 4 u olivia rodrigo">
+  <div class="n">074</div>
+  <div class="meta"><div class="t">good 4 u</div><div class="a">Olivia Rodrigo<span class="dot">·</span>SOUR</div></div>
+  <div class="dur">2:59</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/good%204%20u%20Olivia%20Rodrigo" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=good%204%20u%20Olivia%20Rodrigo" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=good%204%20u%20Olivia%20Rodrigo" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="life goes on oliver tree">
+  <div class="n">075</div>
+  <div class="meta"><div class="t">Life Goes On</div><div class="a">Oliver Tree<span class="dot">·</span>Ugly is Beautiful (Deluxe)</div></div>
+  <div class="dur">2:42</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Life%20Goes%20On%20Oliver%20Tree" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Life%20Goes%20On%20Oliver%20Tree" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Life%20Goes%20On%20Oliver%20Tree" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="shivers ed sheeran">
+  <div class="n">076</div>
+  <div class="meta"><div class="t">Shivers</div><div class="a">Ed Sheeran<span class="dot">·</span>Shivers</div></div>
+  <div class="dur">3:28</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Shivers%20Ed%20Sheeran" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Shivers%20Ed%20Sheeran" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Shivers%20Ed%20Sheeran" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="i feel it coming (feat. daft punk) the weeknd">
+  <div class="n">077</div>
+  <div class="meta"><div class="t">I Feel It Coming (feat. Daft Punk)</div><div class="a">The Weeknd<span class="dot">·</span>Starboy</div></div>
+  <div class="dur">4:30</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/I%20Feel%20It%20Coming%20%28feat.%20Daft%20Punk%29%20The%20Weeknd" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=I%20Feel%20It%20Coming%20%28feat.%20Daft%20Punk%29%20The%20Weeknd" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=I%20Feel%20It%20Coming%20%28feat.%20Daft%20Punk%29%20The%20Weeknd" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="let her go passenger">
+  <div class="n">078</div>
+  <div class="meta"><div class="t">Let Her Go</div><div class="a">Passenger<span class="dot">·</span>All The Little Lights</div></div>
+  <div class="dur">4:13</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Let%20Her%20Go%20Passenger" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Let%20Her%20Go%20Passenger" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Let%20Her%20Go%20Passenger" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="lucid dreams juice wrld">
+  <div class="n">079</div>
+  <div class="meta"><div class="t">Lucid Dreams</div><div class="a">Juice WRLD<span class="dot">·</span>Goodbye &amp; Good Riddance</div></div>
+  <div class="dur">4:00</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Lucid%20Dreams%20Juice%20WRLD" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Lucid%20Dreams%20Juice%20WRLD" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Lucid%20Dreams%20Juice%20WRLD" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="end of beginning djo">
+  <div class="n">080</div>
+  <div class="meta"><div class="t">End of Beginning</div><div class="a">Djo<span class="dot">·</span>DECIDE</div></div>
+  <div class="dur">2:40</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/End%20of%20Beginning%20Djo" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=End%20of%20Beginning%20Djo" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=End%20of%20Beginning%20Djo" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="do i wanna know? arctic monkeys">
+  <div class="n">081</div>
+  <div class="meta"><div class="t">Do I Wanna Know?</div><div class="a">Arctic Monkeys<span class="dot">·</span>AM</div></div>
+  <div class="dur">4:33</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Do%20I%20Wanna%20Know%3F%20Arctic%20Monkeys" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Do%20I%20Wanna%20Know%3F%20Arctic%20Monkeys" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Do%20I%20Wanna%20Know%3F%20Arctic%20Monkeys" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="before you leave me alex warren">
+  <div class="n">082</div>
+  <div class="meta"><div class="t">Before You Leave Me</div><div class="a">Alex Warren<span class="dot">·</span>You&#x27;ll Be Alright, Kid (Chapter 1)</div></div>
+  <div class="dur">2:57</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Before%20You%20Leave%20Me%20Alex%20Warren" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Before%20You%20Leave%20Me%20Alex%20Warren" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Before%20You%20Leave%20Me%20Alex%20Warren" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="burn ellie goulding">
+  <div class="n">083</div>
+  <div class="meta"><div class="t">Burn</div><div class="a">Ellie Goulding<span class="dot">·</span>Halcyon Nights</div></div>
+  <div class="dur">3:52</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Burn%20Ellie%20Goulding" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Burn%20Ellie%20Goulding" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Burn%20Ellie%20Goulding" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="if you could see me now the script">
+  <div class="n">084</div>
+  <div class="meta"><div class="t">If You Could See Me Now</div><div class="a">The Script<span class="dot">·</span>#3</div></div>
+  <div class="dur">3:40</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/If%20You%20Could%20See%20Me%20Now%20The%20Script" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=If%20You%20Could%20See%20Me%20Now%20The%20Script" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=If%20You%20Could%20See%20Me%20Now%20The%20Script" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="paradise coldplay">
+  <div class="n">085</div>
+  <div class="meta"><div class="t">Paradise</div><div class="a">Coldplay<span class="dot">·</span>Mylo Xyloto</div></div>
+  <div class="dur">4:39</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Paradise%20Coldplay" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Paradise%20Coldplay" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Paradise%20Coldplay" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="love me again john newman">
+  <div class="n">086</div>
+  <div class="meta"><div class="t">Love Me Again</div><div class="a">John Newman<span class="dot">·</span>Tribute</div></div>
+  <div class="dur">4:00</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Love%20Me%20Again%20John%20Newman" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Love%20Me%20Again%20John%20Newman" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Love%20Me%20Again%20John%20Newman" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="catch me jvke">
+  <div class="n">087</div>
+  <div class="meta"><div class="t">catch me</div><div class="a">JVKE<span class="dot">·</span>this is what ____ feels like (Vol. 1-4)</div></div>
+  <div class="dur">2:58</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/catch%20me%20JVKE" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=catch%20me%20JVKE" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=catch%20me%20JVKE" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="numb linkin park">
+  <div class="n">088</div>
+  <div class="meta"><div class="t">Numb</div><div class="a">Linkin Park<span class="dot">·</span>Meteora (Bonus Edition)</div></div>
+  <div class="dur">3:08</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Numb%20Linkin%20Park" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Numb%20Linkin%20Park" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Numb%20Linkin%20Park" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="the hills the weeknd">
+  <div class="n">089</div>
+  <div class="meta"><div class="t">The Hills</div><div class="a">The Weeknd<span class="dot">·</span>Beauty Behind The Madness</div></div>
+  <div class="dur">4:03</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/The%20Hills%20The%20Weeknd" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=The%20Hills%20The%20Weeknd" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=The%20Hills%20The%20Weeknd" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="look at me! xxxtentacion">
+  <div class="n">090</div>
+  <div class="meta"><div class="t">Look At Me!</div><div class="a">XXXTENTACION<span class="dot">·</span>Look At Me!</div></div>
+  <div class="dur">2:07</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Look%20At%20Me%21%20XXXTENTACION" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Look%20At%20Me%21%20XXXTENTACION" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Look%20At%20Me%21%20XXXTENTACION" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="stargazing myles smith">
+  <div class="n">091</div>
+  <div class="meta"><div class="t">Stargazing</div><div class="a">Myles Smith<span class="dot">·</span>Stargazing</div></div>
+  <div class="dur">2:53</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Stargazing%20Myles%20Smith" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Stargazing%20Myles%20Smith" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Stargazing%20Myles%20Smith" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="a thousand years john michael howell &amp; jvke &amp; zvc">
+  <div class="n">092</div>
+  <div class="meta"><div class="t">A Thousand Years</div><div class="a">John Michael Howell &amp; JVKE &amp; ZVC<span class="dot">·</span>A Thousand Years</div></div>
+  <div class="dur">3:01</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/A%20Thousand%20Years%20John%20Michael%20Howell%20%26%20JVKE%20%26%20ZVC" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=A%20Thousand%20Years%20John%20Michael%20Howell%20%26%20JVKE%20%26%20ZVC" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=A%20Thousand%20Years%20John%20Michael%20Howell%20%26%20JVKE%20%26%20ZVC" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="heat waves glass animals">
+  <div class="n">093</div>
+  <div class="meta"><div class="t">Heat Waves</div><div class="a">Glass Animals<span class="dot">·</span>Dreamland</div></div>
+  <div class="dur">3:59</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Heat%20Waves%20Glass%20Animals" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Heat%20Waves%20Glass%20Animals" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Heat%20Waves%20Glass%20Animals" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="daylight david kushner">
+  <div class="n">094</div>
+  <div class="meta"><div class="t">Daylight</div><div class="a">David Kushner<span class="dot">·</span>Daylight</div></div>
+  <div class="dur">3:33</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Daylight%20David%20Kushner" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Daylight%20David%20Kushner" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Daylight%20David%20Kushner" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="i thought i saw your face today she &amp; him">
+  <div class="n">095</div>
+  <div class="meta"><div class="t">I Thought I Saw Your Face Today</div><div class="a">She &amp; Him<span class="dot">·</span>Volume One</div></div>
+  <div class="dur">2:51</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/I%20Thought%20I%20Saw%20Your%20Face%20Today%20She%20%26%20Him" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=I%20Thought%20I%20Saw%20Your%20Face%20Today%20She%20%26%20Him" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=I%20Thought%20I%20Saw%20Your%20Face%20Today%20She%20%26%20Him" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="happier marshmello &amp; bastille">
+  <div class="n">096</div>
+  <div class="meta"><div class="t">Happier</div><div class="a">Marshmello &amp; Bastille<span class="dot">·</span>Happier</div></div>
+  <div class="dur">3:35</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Happier%20Marshmello%20%26%20Bastille" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Happier%20Marshmello%20%26%20Bastille" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Happier%20Marshmello%20%26%20Bastille" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="as it was harry styles">
+  <div class="n">097</div>
+  <div class="meta"><div class="t">As It Was</div><div class="a">Harry Styles<span class="dot">·</span>Harry&#x27;s House</div></div>
+  <div class="dur">2:48</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/As%20It%20Was%20Harry%20Styles" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=As%20It%20Was%20Harry%20Styles" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=As%20It%20Was%20Harry%20Styles" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="somewhere only we know keane">
+  <div class="n">098</div>
+  <div class="meta"><div class="t">Somewhere Only We Know</div><div class="a">Keane<span class="dot">·</span>Hopes And Fears</div></div>
+  <div class="dur">3:58</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Somewhere%20Only%20We%20Know%20Keane" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Somewhere%20Only%20We%20Know%20Keane" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Somewhere%20Only%20We%20Know%20Keane" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="i think they call this love elliot james reay">
+  <div class="n">099</div>
+  <div class="meta"><div class="t">I Think They Call This Love</div><div class="a">Elliot James Reay<span class="dot">·</span>I Think They Call This Love</div></div>
+  <div class="dur">3:14</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/I%20Think%20They%20Call%20This%20Love%20Elliot%20James%20Reay" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=I%20Think%20They%20Call%20This%20Love%20Elliot%20James%20Reay" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=I%20Think%20They%20Call%20This%20Love%20Elliot%20James%20Reay" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="i&#x27;m not okay jvke">
+  <div class="n">100</div>
+  <div class="meta"><div class="t">i&#x27;m not okay</div><div class="a">JVKE<span class="dot">·</span>this is what ____ feels like (Vol. 1-4)</div></div>
+  <div class="dur">2:26</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/i%27m%20not%20okay%20JVKE" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=i%27m%20not%20okay%20JVKE" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=i%27m%20not%20okay%20JVKE" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="honeypie jawny">
+  <div class="n">101</div>
+  <div class="meta"><div class="t">Honeypie</div><div class="a">JAWNY<span class="dot">·</span>Teen Summer</div></div>
+  <div class="dur">2:16</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Honeypie%20JAWNY" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Honeypie%20JAWNY" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Honeypie%20JAWNY" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="wait a minute! willow">
+  <div class="n">102</div>
+  <div class="meta"><div class="t">Wait a Minute!</div><div class="a">WILLOW<span class="dot">·</span>ARDIPITHECUS</div></div>
+  <div class="dur">3:17</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Wait%20a%20Minute%21%20WILLOW" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Wait%20a%20Minute%21%20WILLOW" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Wait%20a%20Minute%21%20WILLOW" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="astronaut song jomm &amp; readyaimfire27">
+  <div class="n">103</div>
+  <div class="meta"><div class="t">Astronaut Song</div><div class="a">jomm &amp; readyaimfire27<span class="dot">·</span>Astronaut Song</div></div>
+  <div class="dur">3:08</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Astronaut%20Song%20jomm%20%26%20readyaimfire27" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Astronaut%20Song%20jomm%20%26%20readyaimfire27" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Astronaut%20Song%20jomm%20%26%20readyaimfire27" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="medusa zak azoury">
+  <div class="n">104</div>
+  <div class="meta"><div class="t">Medusa</div><div class="a">Zak Azoury<span class="dot">·</span>Medusa</div></div>
+  <div class="dur">2:55</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Medusa%20Zak%20Azoury" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Medusa%20Zak%20Azoury" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Medusa%20Zak%20Azoury" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="best friend rex orange county">
+  <div class="n">105</div>
+  <div class="meta"><div class="t">Best Friend</div><div class="a">Rex Orange County<span class="dot">·</span>Best Friend</div></div>
+  <div class="dur">4:23</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Best%20Friend%20Rex%20Orange%20County" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Best%20Friend%20Rex%20Orange%20County" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Best%20Friend%20Rex%20Orange%20County" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="it&#x27;s like i&#x27;m not even here mthu">
+  <div class="n">106</div>
+  <div class="meta"><div class="t">it&#x27;s like i&#x27;m not even here</div><div class="a">mthu<span class="dot">·</span>it&#x27;s like i&#x27;m not even here</div></div>
+  <div class="dur">1:38</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/it%27s%20like%20i%27m%20not%20even%20here%20mthu" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=it%27s%20like%20i%27m%20not%20even%20here%20mthu" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=it%27s%20like%20i%27m%20not%20even%20here%20mthu" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="elements john michael howell &amp; zvc">
+  <div class="n">107</div>
+  <div class="meta"><div class="t">Elements</div><div class="a">John Michael Howell &amp; ZVC<span class="dot">·</span>Elements</div></div>
+  <div class="dur">2:41</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Elements%20John%20Michael%20Howell%20%26%20ZVC" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Elements%20John%20Michael%20Howell%20%26%20ZVC" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Elements%20John%20Michael%20Howell%20%26%20ZVC" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="in the stars benson boone">
+  <div class="n">108</div>
+  <div class="meta"><div class="t">In The Stars</div><div class="a">Benson Boone<span class="dot">·</span>Walk Me Home...</div></div>
+  <div class="dur">3:37</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/In%20The%20Stars%20Benson%20Boone" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=In%20The%20Stars%20Benson%20Boone" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=In%20The%20Stars%20Benson%20Boone" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="one kiss calvin harris &amp; dua lipa">
+  <div class="n">109</div>
+  <div class="meta"><div class="t">One Kiss</div><div class="a">Calvin Harris &amp; Dua Lipa<span class="dot">·</span>One Kiss</div></div>
+  <div class="dur">3:35</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/One%20Kiss%20Calvin%20Harris%20%26%20Dua%20Lipa" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=One%20Kiss%20Calvin%20Harris%20%26%20Dua%20Lipa" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=One%20Kiss%20Calvin%20Harris%20%26%20Dua%20Lipa" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="dancing in dreams john michael howell &amp; zak azoury">
+  <div class="n">110</div>
+  <div class="meta"><div class="t">Dancing In Dreams</div><div class="a">John Michael Howell &amp; Zak Azoury<span class="dot">·</span>The Poet</div></div>
+  <div class="dur">2:13</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Dancing%20In%20Dreams%20John%20Michael%20Howell%20%26%20Zak%20Azoury" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Dancing%20In%20Dreams%20John%20Michael%20Howell%20%26%20Zak%20Azoury" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Dancing%20In%20Dreams%20John%20Michael%20Howell%20%26%20Zak%20Azoury" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="beautiful people (feat. khalid) ed sheeran">
+  <div class="n">111</div>
+  <div class="meta"><div class="t">Beautiful People (feat. Khalid)</div><div class="a">Ed Sheeran<span class="dot">·</span>Beautiful People</div></div>
+  <div class="dur">3:18</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Beautiful%20People%20%28feat.%20Khalid%29%20Ed%20Sheeran" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Beautiful%20People%20%28feat.%20Khalid%29%20Ed%20Sheeran" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Beautiful%20People%20%28feat.%20Khalid%29%20Ed%20Sheeran" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="girls like you maroon 5">
+  <div class="n">112</div>
+  <div class="meta"><div class="t">Girls Like You</div><div class="a">Maroon 5<span class="dot">·</span>Red Pill Blues (Deluxe)</div></div>
+  <div class="dur">3:36</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Girls%20Like%20You%20Maroon%205" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Girls%20Like%20You%20Maroon%205" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Girls%20Like%20You%20Maroon%205" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="medusa john michael howell">
+  <div class="n">113</div>
+  <div class="meta"><div class="t">Medusa</div><div class="a">John Michael Howell<span class="dot">·</span>Medusa</div></div>
+  <div class="dur">2:11</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Medusa%20John%20Michael%20Howell" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Medusa%20John%20Michael%20Howell" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Medusa%20John%20Michael%20Howell" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="shape of you ed sheeran">
+  <div class="n">114</div>
+  <div class="meta"><div class="t">Shape of You</div><div class="a">Ed Sheeran<span class="dot">·</span>Shape of You</div></div>
+  <div class="dur">3:54</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Shape%20of%20You%20Ed%20Sheeran" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Shape%20of%20You%20Ed%20Sheeran" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Shape%20of%20You%20Ed%20Sheeran" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="you broke me first conor maynard">
+  <div class="n">115</div>
+  <div class="meta"><div class="t">You Broke Me First</div><div class="a">Conor Maynard<span class="dot">·</span>You Broke Me First</div></div>
+  <div class="dur">2:41</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/You%20Broke%20Me%20First%20Conor%20Maynard" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=You%20Broke%20Me%20First%20Conor%20Maynard" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=You%20Broke%20Me%20First%20Conor%20Maynard" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="delusional john michael howell">
+  <div class="n">116</div>
+  <div class="meta"><div class="t">Delusional</div><div class="a">John Michael Howell<span class="dot">·</span>Delusional</div></div>
+  <div class="dur">2:52</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Delusional%20John%20Michael%20Howell" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Delusional%20John%20Michael%20Howell" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Delusional%20John%20Michael%20Howell" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="idfc blackbear">
+  <div class="n">117</div>
+  <div class="meta"><div class="t">idfc</div><div class="a">blackbear<span class="dot">·</span>deadroses</div></div>
+  <div class="dur">4:06</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/idfc%20blackbear" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=idfc%20blackbear" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=idfc%20blackbear" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="cold (feat. future) maroon 5">
+  <div class="n">118</div>
+  <div class="meta"><div class="t">Cold (feat. Future)</div><div class="a">Maroon 5<span class="dot">·</span>Red Pill Blues (Deluxe)</div></div>
+  <div class="dur">3:55</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Cold%20%28feat.%20Future%29%20Maroon%205" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Cold%20%28feat.%20Future%29%20Maroon%205" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Cold%20%28feat.%20Future%29%20Maroon%205" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="heather x eyes blue fasetya">
+  <div class="n">119</div>
+  <div class="meta"><div class="t">Heather x Eyes Blue</div><div class="a">Fasetya<span class="dot">·</span>Heather x Eyes Blue</div></div>
+  <div class="dur">3:01</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Heather%20x%20Eyes%20Blue%20Fasetya" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Heather%20x%20Eyes%20Blue%20Fasetya" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Heather%20x%20Eyes%20Blue%20Fasetya" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="dancing in my room 347aidan">
+  <div class="n">120</div>
+  <div class="meta"><div class="t">Dancing in My Room</div><div class="a">347aidan<span class="dot">·</span></div></div>
+  <div class="dur">3:02</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Dancing%20in%20My%20Room%20347aidan" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Dancing%20in%20My%20Room%20347aidan" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Dancing%20in%20My%20Room%20347aidan" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="we fell in love in october girl in red">
+  <div class="n">121</div>
+  <div class="meta"><div class="t">we fell in love in october</div><div class="a">girl in red<span class="dot">·</span>we fell in love in october / forget her</div></div>
+  <div class="dur">3:05</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/we%20fell%20in%20love%20in%20october%20girl%20in%20red" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=we%20fell%20in%20love%20in%20october%20girl%20in%20red" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=we%20fell%20in%20love%20in%20october%20girl%20in%20red" target="_blank" rel="noopener">YT</a>
+  </div>
+</li><li class="row" data-s="loser (official visualizer) ax and the hatchetmen">
+  <div class="n">122</div>
+  <div class="meta"><div class="t">Loser (Official Visualizer)</div><div class="a">Ax and the Hatchetmen<span class="dot">·</span></div></div>
+  <div class="dur">3:32</div>
+  <div class="links">
+    <a class="sp" href="https://open.spotify.com/search/Loser%20%28Official%20Visualizer%29%20Ax%20and%20the%20Hatchetmen" target="_blank" rel="noopener">Spotify</a>
+    <a class="am" href="https://music.apple.com/search?term=Loser%20%28Official%20Visualizer%29%20Ax%20and%20the%20Hatchetmen" target="_blank" rel="noopener">Apple</a>
+    <a class="yt" href="https://music.youtube.com/search?q=Loser%20%28Official%20Visualizer%29%20Ax%20and%20the%20Hatchetmen" target="_blank" rel="noopener">YT</a>
+  </div>
+</li>
+</ul>
+<footer>Links open the official streaming service. No audio is stored here.</footer>
+<script>
+  const q = document.getElementById('q'), rows = [...document.querySelectorAll('.row')];
+  q.addEventListener('input', () => {
+    const v = q.value.trim().toLowerCase();
+    rows.forEach(r => { r.style.display = !v || r.dataset.s.includes(v) ? 'flex' : 'none'; });
+  });
+</script>
+</body></html>
